@@ -23,17 +23,19 @@ from vxi11Device import Vxi11Device
 from usbtmcDevice import UsbtmcDevice
 
 # check arguments
-if len(sys.argv) != 3 or (sys.argv[1] != 'vxi11' and sys.argv[1] != 'usbtmc'):
-    print('Usage: %s {vxi11|usbtmc} <device-or-ip>', file=sys.stderr)
-    exit(1)
+#if len(sys.argv) != 3 or (sys.argv[1] != 'vxi11' and sys.argv[1] != 'usbtmc'):
+#    print('Usage: %s {vxi11|usbtmc} <device-or-ip>', file=sys.stderr)
+#    exit(1)
 
 # open VXI-11 connection, if requested by user
-if sys.argv[1] == 'vxi11':
-    dev = Vxi11Device(sys.argv[2], 'inst0')
+#if sys.argv[1] == 'vxi11':
+#    dev = Vxi11Device(sys.argv[2], 'inst0')
 
 # open USBTMC connection, if requested by user
-if sys.argv[1] == 'usbtmc':
-    dev = UsbtmcDevice(sys.argv[2])
+#if sys.argv[1] == 'usbtmc':
+#    dev = UsbtmcDevice(sys.argv[2])
+
+dev = UsbtmcDevice('/dev/usbtmc0')
 
 # read and execute commands
 try:
